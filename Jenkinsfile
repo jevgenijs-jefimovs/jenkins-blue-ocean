@@ -20,7 +20,7 @@ pipeline {
 
     stage('') {
       steps {
-        bat 'dir'
+        dir(path: '..')
       }
     }
 
