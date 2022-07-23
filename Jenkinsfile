@@ -1,9 +1,26 @@
 pipeline {
   agent any
   stages {
+    stage('test') {
+      parallel {
+        stage('error') {
+          steps {
+            sh 'echo "Test"'
+          }
+        }
+
+        stage('boss') {
+          steps {
+            echo 'Test me'
+          }
+        }
+
+      }
+    }
+
     stage('') {
       steps {
-        sh 'echo "Test"'
+        bat 'dir'
       }
     }
 
